@@ -1,0 +1,16 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      h3
+        | Delete Product
+    .modal-body
+      ul.errors
+      |  Are you sure you wish to delete 
+      b
+        = @product.name
+      | ? 
+    .modal-footer
+      = link_to "Yes, Delete This Product", product_path(@product), 
+      -       method: :delete, remote: true, class: "btn btn-danger"
+      = link_to "No, Please Don't", "#", class: "btn btn-default", 
+      -       data: { dismiss: "modal" }
